@@ -1,0 +1,516 @@
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000af;
+    z-index: 2;
+    /* display: none; */
+}
+
+.context-menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #FFF;
+    z-index: 3;
+    width: max-content;
+    height: auto;
+    /* display: none; */
+    border-radius: 4px;
+    border: 1px solid #1e78da;
+}
+
+.context-menu__item {
+    height: 28px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 8px 2px 8px;
+}
+
+.context-menu__item:hover {
+    cursor: pointer;
+    background-color: #1e78da;
+}
+
+
+.dialog-writing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.dialog__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+
+.dialog__header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.dialog__header-right .tooltip {
+    top: 32px;
+}
+
+.dialog__header-right .tooltip-top {
+    left: 82%;
+}
+
+.dialog__header-right .btn-close:hover .tooltip {
+    visibility: visible;
+}
+
+.dialong__footer-left .tooltip {
+    bottom: 52px;
+    left: 35px;
+}
+
+.dialong__footer-left .tooltip-bottom {
+    left: 35%;
+}
+
+#btn-cancel:hover~.tooltip {
+    visibility: visible;
+}
+
+.dialog__header-left {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dialog-writing .dialog__header-left {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.header-left__checkbox {
+    font-size: 14px;
+    font-weight: initial;
+    display: flex;
+    margin-top: -5px;
+    margin-left: 16px;
+}
+
+.dialog-checkbox__item {
+    cursor: pointer;
+    position: relative;
+}
+
+.dialog-checkbox__item .checkbox__input {
+    display: none;
+}
+
+.dialog-checkbox__item::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border: 1px solid #1e78da;
+    background-color: white;
+    border-radius: 3px;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+.header-left__checkbox div {
+    padding-left: 16px;
+}
+
+.checkbox__input__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -1224px -360px;
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    display: none;
+}
+
+.checkbox__input:checked~.checkbox__input__icon {
+    display: block;
+}
+
+.dialog-checkbox__item:hover::before {
+    background-color: #b1bce2;
+}
+
+.icon-btn:hover {
+    cursor: pointer;
+    filter: invert(57%) sepia(63%) saturate(451%) hue-rotate(64deg) brightness(93%) contrast(99%);
+}
+
+.dialog__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.dialong__footer-right {
+    display: flex;
+    position: relative;
+}
+
+.dialong__footer-right .tooltip {
+    top: -38px;
+    left: -35px;
+}
+
+.dialong__footer-right .tooltip-bottom {
+    left: 70%;
+}
+
+#btn-save:hover~.tooltip.button-save {
+    visibility: visible;
+}
+
+.dialong__footer-right .tooltip.btn-save-add {
+    left: -15px;
+}
+
+.dialong__footer-right .btn-save-add .tooltip-bottom {
+    left: 78%;
+}
+
+#btn-save-add {
+    margin-left: 8px
+}
+
+#btn-save-add:hover~.tooltip.btn-save-add {
+    visibility: visible;
+}
+
+.info-lable {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.info-item+.info-item {
+    margin-top: 12px;
+}
+
+.info__id input {
+    width: 154px;
+}
+
+.info-left__id-name .info__id {
+    margin-right: 12px;
+}
+
+.info-item {
+    width: 100%;
+}
+
+.full-input {
+    width: calc(100% - 26px);
+}
+
+.info-right_row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.info-right_row .info__gender {
+    margin-top: 0px;
+}
+
+.gender-item,
+.info__identity-number,
+.info__birthday,
+.info__id {
+    margin-right: 12px;
+}
+
+.info-right_row .info__identity-issue-date {
+    margin-top: 0px;
+}
+
+.info__birthday {
+    flex: 3;
+}
+
+.info__gender {
+    flex: 4;
+}
+
+.info__identity-number {
+    flex: 4;
+}
+
+.info__identity-issue-date {
+    flex: 3;
+}
+
+.info__address {
+    margin-top: 16px;
+}
+
+.info-item__more {
+    display: flex;
+}
+
+.info-item__more div .info-item:first-child {
+    margin-top: 0px;
+}
+
+.info-item__more div {
+    flex: 1;
+}
+
+.info-more_container+.info-more_container {
+    margin-left: 12px;
+}
+
+.dialog-writing .dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dialog-writing__action {
+    background-color: #ececf8;
+}
+
+.dialog-writing__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.dialog-writing__action {
+    padding: 12px 24px 12px 24px;
+    border-radius: 0px 0px 4px 4px;
+    border-top: 1px solid #B9E2B1;
+}
+
+.dialog-writing__action .dialog__footer {
+    padding-top: 0px;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+}
+
+.content-item__icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -1552px -312px;
+    margin-right: 16px;
+}
+
+.content-item+.content-item {
+    margin-top: 16px;
+}
+
+.content-item__text {
+    font-size: 14px;
+    text-align: left;
+}
+
+.gender-item-container {
+    position: absolute;
+    top: 108px;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.gender-item label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.gender-item label::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #B9E2B1;
+    background-color: white;
+    margin-right: 8px;
+}
+
+.gender-item label input {
+    display: none;
+}
+
+.gender-item label input:checked~.radio__icon {
+    display: block;
+}
+
+.gender-item label:hover::before {
+    background-color: #eceef8;
+}
+
+.radio__icon {
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    background-color: #3f3093;
+    display: none;
+    position: absolute;
+    left: 3.5px;
+    top: 3.5px;
+}
+
+.loadding {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000af;
+    z-index: 2;
+    /* display: none; */
+}
+
+.dialog-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.dialog__body {
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.dialog__footer {
+    width: 100%;
+    height: 60px;
+    background-color: #eceef8;
+    border-top: 1px solid #b1bee2;
+    padding: 12px 24px 12px 24px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.body-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.dialog__body .tooltip {
+    right: 0px;
+    top: 32px;
+}
+
+.dialog__body .tooltip-top {
+    left: 78px;
+}
+
+.btn-close:hover~.tooltip {
+    visibility: visible;
+}
+
+.btn-close {
+    width: 24px;
+    height: 24px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -144px -144px;
+    cursor: pointer;
+}
+
+.body-header__title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.body-header {
+    margin-bottom: 24px;
+}
+
+.dialog__content-info {
+    display: flex;
+}
+
+.info-left {
+    width: 50%;
+    padding-right: 8px;
+}
+
+.info-right {
+    width: 50%;
+    padding-left: 8px;
+}
+
+.info-left__id-name {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.info-left__id-name .info__name {
+    margin-top: 0px;
+    width: 100%;
+}
+
+.info-left__id-name .info__id {
+    width: 180px;
+}
+
+.gender-item {
+    position: relative;
+    margin-right: 12px;
+    padding-left: 0px;
+}
+
+.label-radio {
+    width: max-content;
+    position: absolute;
+    left: 28px;
+    top: 5px;
+}
+
+.loadding__icon {
+    width: 36px;
+    height: 36px;
+    background-color: #73C663;
+}
+
+.paging-right__combobox {
+    position: relative;
+}
+
+.paging-right__combobox input {
+    width: calc(100% - 66px);
+    padding-right: 52px;
+}

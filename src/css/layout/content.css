@@ -1,0 +1,231 @@
+.content {
+    background-color: #edecf8;
+    width: 100%;
+    height: calc(100% - 56px);
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 16px 0px;
+}
+
+.content-header__title {
+    width: auto;
+    height: auto;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: left;
+    color: #1F1F20;
+}
+
+.content-body {
+    background-color: white;
+    height: calc(100% - 84px + 32px);
+    border-radius: 4px;
+    padding: 16px 16px 16px 16px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.search__icon {
+    background-image: url(/src/assets/img/Search.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-color: transparent;
+}
+
+.search__icon:hover {
+    cursor: pointer;
+    filter: invert(57%) sepia(63%) saturate(451%) hue-rotate(64deg) brightness(93%) contrast(99%);
+}
+
+.content-body__toolbar {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.content-body__toolbar input {
+    padding-right: 36px;
+}
+
+.content-body__toolbar .search__icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 48px;
+}
+
+.content-body__toolbar input {
+    width: 246px;
+}
+
+.toolbar__refresh {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    background-image: url(/src/assets/img/Refresh.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-color: transparent;
+    position: relative;
+}
+
+.content-body__toolbar .tooltip {
+    top: 35px;
+    right: -16px;
+}
+
+.content-body__toolbar .tooltip-top {
+    left: 70%;
+}
+
+.toolbar__refresh:hover~.tooltip {
+    visibility: visible;
+}
+
+.toolbar__refresh:hover {
+    cursor: pointer;
+    /* filter: invert(57%) sepia(63%) saturate(451%) hue-rotate(64deg) brightness(93%) contrast(99%); */
+}
+
+.content-body__paging {
+    height: 36px;
+    width: 100%;
+    padding: 16px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-body__table {
+    height: calc(100% - 104px);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.paging-right {
+    display: flex;
+    align-items: center;
+}
+
+.paging-left__total-record {
+    font-weight: 400px;
+}
+
+.paging-right__page {
+    font-weight: 400px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.page__tile-next {
+    margin-left: 16px;
+}
+
+.page__index {
+    margin-left: 16px;
+    display: flex;
+}
+
+.page__index-item {
+    min-width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.page-selected {
+    border: 1px solid #bcb1e2;
+    font-weight: 600;
+    padding: 0px 2px 0px 2px;
+}
+
+.page__index-item+.page__index-item {
+    margin-left: 2px;
+}
+
+.paging-right__combobox input {
+    font-size: 14px;
+}
+
+.combobox__icon__container {
+    width: 38px;
+    height: 34px;
+    border-left: 1px solid #b8b1e2;
+    border-radius: 0px 3px 3px 0px;
+    position: relative;
+    z-index: 0;
+}
+
+.combobox__icon__container .combobox__icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 9px;
+    right: 11px;
+}
+
+.btn__icon {
+    border: 1px solid transparent;
+}
+
+table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
+
+.content-body__table thead th:last-child,
+.content-body__table tbody td:last-child {
+    position: sticky;
+    right: 0;
+}
+
+.content-body__table tbody td:first-child,
+.content-body__table thead th:first-child {
+    position: sticky;
+    left: 0;
+}
+
+.content-body__table th {
+    background-color: #d8def1;
+}
+
+.tbody-viewer__td {
+    background-color: white;
+}
+
+.td-function__popup {
+    visibility: hidden;
+    background-color: #3f3093;
+    width: auto;
+    height: auto;
+    border: 1px solid #b6b1e2;
+    position: absolute;
+    z-index: 99999;
+    display: none;
+}
+
+.popup-item {
+    font-size: 13px;
+    height: 30px;
+    padding: 0px 8px 0px 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}

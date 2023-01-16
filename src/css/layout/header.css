@@ -1,0 +1,141 @@
+.header{
+    height: 56px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px 10px 16px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-right{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-left__toggle{
+    width: 24px;
+    height: 24px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -842.9976196289062px;
+    background-position-y: -29.999908447265625px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.header-left__toggle .tooltip{
+    top: 25px;
+}
+
+.header-left__toggle .tooltip-top{
+    left: 4%;
+}
+
+.header-left__toggle:hover .tooltip{
+    visibility: visible;
+}
+
+.header-left__toggle:hover{
+    cursor: pointer;
+}
+
+.header-left__title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header-left__title:hover{
+    cursor: pointer;
+}
+
+.header-right__avatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url(/src/assets/img/face.jpg);
+    background-repeat: no-repeat;
+    background-size: 36px;
+    margin-left: 16px;
+}
+
+.header-right__avatar:hover{
+    cursor: pointer;
+}
+
+.header-right__user-name{
+    display: flex;
+    align-items: center;
+}
+
+.header-right__user-name:hover{
+    cursor: pointer;
+}
+
+.user-name__icon{
+    width: 8px;
+    height: 4px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -1078.7069091796875px;
+    background-position-y: -38.70988082885742px;
+    margin-left: 16px;
+}
+
+.user-name__icon:hover{
+    cursor: pointer;
+}
+
+.header-right__user-name span{
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+    color: #1F1F20;
+    margin-left: 16px;
+}
+
+.header-right__notify{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header-right__notify .tooltip{
+    top: 30px;
+    right: -15px;
+}
+.header-right__notify .tooltip-top{
+    left: 65%;
+}
+
+.header-right__notify:hover .tooltip{
+    visibility: visible;
+}
+
+#btn-notify{
+    width: 100%;
+    height: 100%;
+    background-image: url(/src/assets/img/Notify.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: unset;
+    background-color: transparent;
+}
+
+.header-right__notify:hover button{
+    cursor: pointer;
+    filter: invert(72%) sepia(25%) saturate(3492%) hue-rotate(62deg) brightness(92%) contrast(67%);
+}

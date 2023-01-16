@@ -1,0 +1,207 @@
+.sidebar{
+    min-width: 200px;
+    width: 200px;
+    height: 100%;
+    background-color: #0c1a5a;
+    box-sizing: border-box;
+}
+
+.logo-container{
+    width: 100%;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-option{
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -423.9988708496094px;
+    background-position-y: -87.9997329711914px;
+    position: relative;
+}
+
+.logo-option .tooltip{
+    bottom: -35px;
+}
+
+.logo-option .tooltip-top{
+    left: 4.5%;
+}
+
+.logo-option:hover{
+    cursor: pointer;
+}
+
+.logo-option:hover .tooltip{
+    visibility: visible;
+}
+
+.logo{
+    width: 108px;
+    height: 36px;
+    background-image: url(/src/assets/img/Logo_Module_TiengViet_White.66947422.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sidebar-menu{
+    margin: 16px 0px 16px 0px;
+    width: 100%;
+    height: calc(100% - 32px - 56px);
+}
+
+.menu-item{
+    height: 24px;
+    width: calc(100% - 48px);
+    padding: 10px 24px 10px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover{
+    cursor: pointer;
+    background-color: #423093;
+}
+
+.menu-item + .menu-item{
+    margin-top: 4px;
+}
+
+.menu-item__icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.menu-item__text{
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    color: #F7F7F7;
+}
+
+.scrollbar{
+    overflow: auto;
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 0px;
+    height: 8px;
+    background-color: #ececf8;
+    cursor: pointer;
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background-color: #8a95d5;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #af9ef8;
+}
+
+.dashboard{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -30px;
+    background-position-y: -1628px;
+}
+
+.cash{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -73px;
+    background-position-y: -1628px;
+}
+
+.bank{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -117px;
+    background-position-y: -1628px;
+}
+
+.purchase{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -161px;
+    background-position-y: -1628px;
+}
+
+.sale{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -204px;
+    background-position-y: -1628px;
+}
+
+.invoice{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -249px;
+    background-position-y: -1628px;
+}
+
+.stock{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -291px;
+    background-position-y: -1628px;
+}
+
+.tools{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -336px;
+    background-position-y: -1628px;
+}
+
+.fixed-assets{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -378px;
+    background-position-y: -1628px;
+}
+
+.tax{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -423px;
+    background-position-y: -1628px;
+}
+
+.price{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -467px;
+    background-position-y: -1628px;
+}
+
+.general{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -510px;
+    background-position-y: -1628px;
+}
+
+.budget{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -378px;
+    background-position-y: -1628px;
+}
+
+.report{
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position-x: -547px;
+    background-position-y: -1628px;
+}

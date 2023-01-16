@@ -1,0 +1,71 @@
+.tooltip{
+    visibility: hidden;
+    width: max-content;
+    background-color: #6d63c6;
+    color: #FFFF;
+    text-align: left;
+    border-radius: 4px;
+    padding: 8px 12px 8px 12px;
+    position: absolute;
+    z-index: 3;
+}
+
+
+.tooltip-top{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #6a63c6;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+}
+
+.tooltip-right{
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #7863c6;
+    position: absolute;
+    top: 33%;
+    right: -5px;
+}
+
+.tooltip-bottom{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #7263c6;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+}
+
+.tooltip-left{
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right:5px solid #6d63c6;
+    position: absolute;
+    top: 34%;
+    left: -5px;
+}
+
+.top .tooltip > .tooltip-right,
+.top .tooltip > .tooltip-bottom,
+.top .tooltip > .tooltip-left,
+.right .tooltip > .tooltip-top,
+.right .tooltip > .tooltip-left,
+.right .tooltip > .tooltip-bottom,
+.bottom .tooltip > .tooltip-top,
+.bottom .tooltip > .tooltip-left,
+.bottom .tooltip > .tooltip-right,
+.left .tooltip > .tooltip-bottom,
+.left .tooltip > .tooltip-top,
+.left .tooltip > .tooltip-right{
+    visibility: hidden;
+}

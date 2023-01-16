@@ -1,0 +1,74 @@
+.btn{
+    height: 36px;
+    border: unset;
+    border-radius: 4px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: #fff;
+}
+
+.btn + .btn{
+    margin-left: 8px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-add{
+    min-width: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #004999;
+}
+
+.btn-add:hover{
+    background-color: #1e78da;
+}
+
+.btn-add:active{
+    background-color: #1e78da;
+}
+
+.btn-dialog__help{
+    width: 24px;
+    height: 24px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -89px -144px;
+}
+
+.btn-dialog__close{
+    width: 24px;
+    height: 24px;
+    background-image: url(/src/assets/img/Sprites.64af8f61.svg);
+    background-repeat: no-repeat;
+    background-position: -144px -144px;
+    margin-left: 8px;
+}
+
+.btn-outline{
+    background-color: #fff;
+    min-width: 80px;
+    color: #1F1F1F;
+    border: 1px solid #cdccec;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    text-align: center;
+}
+
+.btn-outline:hover{
+    background-color: #ded7ee;
+}
+
+.btn-outline:active{
+    background-color: #1e78da;
+    color: #fff;
+}
+
+.btn-icon{
+    padding: 8px;
+}
