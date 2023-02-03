@@ -1,7 +1,7 @@
 .tooltip{
     visibility: hidden;
     width: max-content;
-    background-color: #6d63c6;
+    background-color: #73C663;
     color: #FFFF;
     text-align: left;
     border-radius: 4px;
@@ -16,7 +16,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #6a63c6;
+    border-bottom: 5px solid #73C663;
     position: absolute;
     top: -5px;
     left: 50%;
@@ -27,7 +27,7 @@
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-left: 5px solid #7863c6;
+    border-left: 5px solid #73C663;
     position: absolute;
     top: 33%;
     right: -5px;
@@ -38,7 +38,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #7263c6;
+    border-top: 5px solid #73C663;
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -49,7 +49,7 @@
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right:5px solid #6d63c6;
+    border-right:5px solid #73C663;
     position: absolute;
     top: 34%;
     left: -5px;

@@ -150,8 +150,8 @@ export default {
           //Gọi API xoá 1 nhân viên
           this.axios
             .delete(
-               "https://amis.manhnv.net/api/v1/Employees/" + this.dataemp.empId
-              //"http://localhost:56263/api/v1/Employees/" + this.dataemp.empId
+              //  "https://amis.manhnv.net/api/v1/Employees/" + this.dataemp.empId
+              "http://localhost:5168/api/v1/Employees/" + this.dataemp.empId
             )
             .then(() => {
               //Ẩn dialog
@@ -163,7 +163,7 @@ export default {
           //Gọi API xoá nhiều nhân viên
           for (const item of this.employeeID) {
             this.axios
-              .delete("https://amis.manhnv.net/api/v1/Employees/" + item)
+              .delete("http://localhost:5168/api/v1/Employees/" + item)
               .then(() => {});
           }
           //Ẩn dialog

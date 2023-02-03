@@ -7,7 +7,7 @@
     right: 1px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    border-left: 1px solid #1e78da;
+    border-left: 1px solid #DCF1D8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .combobox:hover{
-    background-color: #1e78da;
+    background-color: #EEF8EC;
 }
 
 .combobox__list{
@@ -36,7 +36,7 @@
     max-height: 308px;
     overflow: auto;
     position: absolute;
-    border: 1px solid #1e78da;
+    border: 1px solid #DCF1D8;
 }
 
 .combobox-item{
@@ -56,9 +56,9 @@
 }
 
 .combobox-active{
-    color: #3c44b8;
+    color: #50B83C;
 }
 
 .combobox-item:hover{
-    background-color: #eceff8;
+    background-color: #EEF8EC;
 }

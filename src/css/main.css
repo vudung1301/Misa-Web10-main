@@ -46,3 +46,11 @@ body{
 .hideBtn{
     display: none;
 }
+.sprite {
+	background: url('../assets/img/Sprites.64af8f61.svg') no-repeat -705px -202px;
+	width: 23px;
+	height: 20px;
+    border: none;
+    margin-left:10px;
+    cursor: pointer; 
+}

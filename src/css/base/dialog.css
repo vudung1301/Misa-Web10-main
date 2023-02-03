@@ -19,7 +19,7 @@
     height: auto;
     /* display: none; */
     border-radius: 4px;
-    border: 1px solid #1e78da;
+    border: 1px solid #B9E2B1;
 }
 
 .context-menu__item {
@@ -32,9 +32,12 @@
 
 .context-menu__item:hover {
     cursor: pointer;
-    background-color: #1e78da;
+    background-color: #EEF8EC;
 }
 
+.context-menu__item+.context-menu__item {
+    /* margin-top: 8px; */
+}
 
 .dialog-writing {
     position: absolute;
@@ -123,7 +126,7 @@
     width: 18px;
     height: 18px;
     display: inline-block;
-    border: 1px solid #1e78da;
+    border: 1px solid #B9E2B1;
     background-color: white;
     border-radius: 3px;
     position: relative;
@@ -152,7 +155,7 @@
 }
 
 .dialog-checkbox__item:hover::before {
-    background-color: #b1bce2;
+    background-color: #B9E2B1;
 }
 
 .icon-btn:hover {
@@ -290,7 +293,7 @@
 }
 
 .dialog-writing__action {
-    background-color: #ececf8;
+    background-color: #EEF8EC;
 }
 
 .dialog-writing__footer {
@@ -367,14 +370,14 @@
 }
 
 .gender-item label:hover::before {
-    background-color: #eceef8;
+    background-color: #EEF8EC;
 }
 
 .radio__icon {
     width: 13px;
     height: 13px;
     border-radius: 50px;
-    background-color: #3f3093;
+    background-color: #409330;
     display: none;
     position: absolute;
     left: 3.5px;
@@ -413,8 +416,8 @@
 .dialog__footer {
     width: 100%;
     height: 60px;
-    background-color: #eceef8;
-    border-top: 1px solid #b1bee2;
+    background-color: #EEF8EC;
+    border-top: 1px solid #B9E2B1;
     padding: 12px 24px 12px 24px;
     box-sizing: border-box;
     border-radius: 4px;

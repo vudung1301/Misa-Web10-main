@@ -19,6 +19,7 @@
       placeholder="Tìm theo mã, tên nhân viên"
     />
     <div @click="onFilterPaging" class="search__icon"></div>
+    <button @click="exportExcel"  class="sprite"></button>
     <button @click="refreshData" class="btn toolbar__refresh"></button>
     <span class="tooltip"
       >Lấy lại dữ liệu
@@ -53,9 +54,7 @@
           <th class="thead-viewer__th" title="Tên đơn vị">TÊN ĐƠN VỊ</th>
           <th class="thead-viewer__th" title="Chức danh">CHỨC DANH</th>
           <th class="thead-viewer__th" title="Tiền lương">TIỀN LƯƠNG</th>
-          <th class="thead-viewer__th" title="Số chứng minh nhân dân">
-            SỐ CMND
-          </th>
+          <th class="thead-viewer__th" title="Số chứng minh nhân dân">SỐ CMND</th>
           <th class="thead-viewer__th" title="Ngày cấp">NGÀY CẤP</th>
           <th class="thead-viewer__th" title="Nơi cấp">NƠI CẤP</th>
           <th class="thead-viewer__th" title="Địa chỉ">ĐỊA CHỈ</th>
@@ -83,7 +82,7 @@
               class="column-checkbox"
               ref="checkbox"
               checked="false"
-              :dataobj="item.EmployeeId"
+              :dataobj="item.EmployeeID"
             >
               <input
                 @click="onCheckedRow"
@@ -106,12 +105,12 @@
                 : formatDate(item.DateOfBirth)
             }}
           </td>
-          <td class="tbody-viewer__td">{{ item.DepartmentName }}</td>
-          <td class="tbody-viewer__td">{{ item.PositionName }}</td>
+          <td class="tbody-viewer__td">{{ item.DepartmentName}}</td>
+          <td class="tbody-viewer__td">{{ item.JobPositionName }}</td>
           <td class="tbody-viewer__td td-number">
             {{ formatSalary(item.Salary) || 0 }}
           </td>
-          <td class="tbody-viewer__td">{{ item.IdentityNumber }}</td>
+          <td class="tbody-viewer__td">{{ item.IdentityNumber}}</td>
           <td class="tbody-viewer__td td-datetime">
             {{
               formatDate(item.IdentityIssueDate) == "01/01/1970" ||
@@ -121,7 +120,7 @@
             }}
           </td>
           <td class="tbody-viewer__td">{{ item.IdentityIssuePlace }}</td>
-          <td class="tbody-viewer__td">{{ item.Address }}</td>
+          <td class="tbody-viewer__td">{{ item.Address}}</td>
           <td class="tbody-viewer__td">{{ item.PhoneNumber }}</td>
           <td class="tbody-viewer__td">{{ item.Email }}</td>
           <td class="tbody-viewer__td">{{ item.BankAccountNumber }}</td>
@@ -137,7 +136,7 @@
                 <span>Sửa</span>
               </button>
               <button
-                :data-empid="item.EmployeeId"
+                :data-empid="item.EmployeeID"
                 :data-empcode="item.EmployeeCode"
                 @click.stop="showContextMenu($event, item)"
                 id="btnFunc"
@@ -726,8 +725,8 @@ export default {
         //Load dữ liệu từ API
         this.axios
           .get(
-             `https://amis.manhnv.net/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}`
-            //`http://localhost:56263/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}`
+             //`https://amis.manhnv.net/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}`
+            `http://localhost:5168/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}`
           )
           .then((res) => {
             //Gán data trả về cho employees
@@ -868,7 +867,7 @@ export default {
      */
     onShowWarning(dataemp, status) {
       try {
-        this.dataemp.empId = dataemp.EmployeeId;
+        this.dataemp.empId = dataemp.EmployeeID;
         this.dataemp.empCode = dataemp.EmployeeCode;
         this.dataemp.empName = dataemp.EmployeeName;
         this.statusDelete = status;
@@ -928,7 +927,7 @@ export default {
         } else {
           this.axios
             .get(
-               `https://amis.manhnv.net/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}&employeeFilter=${this.employeeFilter}`
+               `http://localhost:5168/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}&keyword=${this.employeeFilter}`
               //`http://localhost:56263/api/v1/Employees/filter?pageSize=${this.pageSize}&pageNumber=${this.pageNumber}&keyword=${this.employeeFilter}`
             )
             .then((res) => {
@@ -965,6 +964,64 @@ export default {
         console.log(error);
       }
     },
+
+    exportExcel() {
+      this.axios
+      .get(
+             `http://localhost:5168/api/v1/Employees`
+          )
+        .then((res) => {
+          //lay du lieu tu server
+          let employeesExport = res.data;
+          
+          import("../../js/Export2Excel").then(excel=>{
+          //data json
+          let OBJ = employeesExport.map((item, index)=>{
+            return {
+              Index: index+1,
+              employeeCode: item.EmployeeCode,
+              employeeName: item.EmployeeName,
+              gender: this.formatGender(item.Gender),
+              dateOfBirth: item?.DateOfBirth ? this.formatDate(item.DateOfBirth) : "",
+              phoneNumber: item?.PhoneNumber || "",
+              email: item?.Email || "",
+              departmentName : item?.DepartmentName  || "",
+            }
+          })
+          //header in excel
+          let Header = ["STT", "Mã nhân viên", "Tên nhân viên", "Giới tính", "Ngày sinh", "Số điện thoại", "Email", "Phòng ban"]
+          //field for map with datajson
+          let Fields = ["Index", "employeeCode", "employeeName", "gender", "dateOfBirth", "phoneNumber", "email", "departmentName"]
+          //data mapped field and obj
+          const DataMapped = this.FormatJson(Fields, OBJ);
+          excel.export_json_to_excel({
+            header: Header,
+            data: DataMapped,
+            sheetName: "Danh sach nhan vien",
+            filename: "Danh_sach_nhan_vien",
+            autoWidth : true,
+            bookType : "xlsx",
+          })
+        })
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      
+    },
+
+
+
+    /**
+     * Thực hiện hiển thị Format file Jsono chuyển sang xlsx
+     * Author: DungNP (14/12/2022)
+     */
+    FormatJson(FilterData, JsonData){
+      return JsonData.map((v) => FilterData.map((j=>{
+        return v[j];
+      })))
+    },
+
   },
   data() {
     return {

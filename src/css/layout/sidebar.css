@@ -2,7 +2,7 @@
     min-width: 200px;
     width: 200px;
     height: 100%;
-    background-color: #0c1a5a;
+    background-color: #306F24;
     box-sizing: border-box;
 }
 
@@ -67,7 +67,7 @@
 
 .menu-item:hover{
     cursor: pointer;
-    background-color: #423093;
+    background-color: #409330;
 }
 
 .menu-item + .menu-item{
@@ -95,17 +95,17 @@
 .scrollbar::-webkit-scrollbar{
     width: 0px;
     height: 8px;
-    background-color: #ececf8;
+    background-color: #EEF8EC;
     cursor: pointer;
 
 }
 
 .scrollbar::-webkit-scrollbar-thumb{
-    background-color: #8a95d5;
+    background-color: #96D58A;
 }
 
 .scrollbar::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #af9ef8;
+    -webkit-box-shadow: inset 0 0 6px #adf89e;
 }
 
 .dashboard{

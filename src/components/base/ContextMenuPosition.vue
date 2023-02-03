@@ -14,11 +14,11 @@
       v-for="(item, index) in positions"
       :key="index"
       class="combobox-item"
-      :depmid="item.PositionId"
-      :positionname="item.PositionName"
+      :depmid="item.JobPositionID"
+      :positionname="item.JobPositionName"
       @click="onSelectdPosition(item)"
     >
-      <div class="combobox__text">{{ item.PositionName }}</div>
+      <div class="combobox__text">{{ item.JobPositionName}}</div>
       <div class="combobox__icon" hidden=""></div>
     </div>
   </div>
@@ -62,7 +62,7 @@ export default {
 
         //Gọi API lấy dữ liệu trong bảng Position
         this.axios
-          .get("https://amis.manhnv.net/api/v1/Positions")
+          .get("http://localhost:5168/api/v1/Jobposition")
           .then((res) => {
             //Ẩn Loading
             this.isShowLoading = false;

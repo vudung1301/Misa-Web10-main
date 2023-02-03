@@ -14,7 +14,7 @@
       v-for="(item, index) in departments"
       :key="index"
       class="combobox-item"
-      :depmid="item.DepartmentId"
+      :depmid="item.DepartmentID"
       :depmname="item.DepartmentName"
       @click="onSelectdDepartment(item)"
     >
@@ -62,7 +62,7 @@ export default {
 
         //Gọi API lấy dữ liệu trong bảng Department
         this.axios
-          .get("https://amis.manhnv.net/api/v1/Departments")
+          .get("http://localhost:5168/api/v1/Departments")
           .then((res) => {
             //Ẩn Loading
             this.isShowLoading = false;

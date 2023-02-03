@@ -1,5 +1,5 @@
 .content {
-    background-color: #edecf8;
+    background-color: #EEF8EC;
     width: 100%;
     height: calc(100% - 56px);
     box-sizing: border-box;
@@ -58,7 +58,7 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    right: 48px;
+    right: 77px;
 }
 
 .content-body__toolbar input {
@@ -91,7 +91,7 @@
 
 .toolbar__refresh:hover {
     cursor: pointer;
-    /* filter: invert(57%) sepia(63%) saturate(451%) hue-rotate(64deg) brightness(93%) contrast(99%); */
+    filter: invert(57%) sepia(63%) saturate(451%) hue-rotate(64deg) brightness(93%) contrast(99%);
 }
 
 .content-body__paging {
@@ -144,7 +144,7 @@
 }
 
 .page-selected {
-    border: 1px solid #bcb1e2;
+    border: 1px solid #B9E2B1;
     font-weight: 600;
     padding: 0px 2px 0px 2px;
 }
@@ -160,7 +160,7 @@
 .combobox__icon__container {
     width: 38px;
     height: 34px;
-    border-left: 1px solid #b8b1e2;
+    border-left: 1px solid #B9E2B1;
     border-radius: 0px 3px 3px 0px;
     position: relative;
     z-index: 0;
@@ -203,7 +203,7 @@ table thead th:first-child {
 }
 
 .content-body__table th {
-    background-color: #d8def1;
+    background-color: #DCF1D8;
 }
 
 .tbody-viewer__td {
@@ -212,10 +212,10 @@ table thead th:first-child {
 
 .td-function__popup {
     visibility: hidden;
-    background-color: #3f3093;
+    background-color: #409330;
     width: auto;
     height: auto;
-    border: 1px solid #b6b1e2;
+    border: 1px solid #B9E2B1;
     position: absolute;
     z-index: 99999;
     display: none;

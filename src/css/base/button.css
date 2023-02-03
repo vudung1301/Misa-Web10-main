@@ -21,15 +21,15 @@
     min-width: 80px;
     padding-left: 16px;
     padding-right: 16px;
-    background-color: #004999;
+    background-color: #409330;
 }
 
 .btn-add:hover{
-    background-color: #1e78da;
+    background-color: #50B83C;
 }
 
 .btn-add:active{
-    background-color: #1e78da;
+    background-color: #306F24;
 }
 
 .btn-dialog__help{
@@ -53,7 +53,7 @@
     background-color: #fff;
     min-width: 80px;
     color: #1F1F1F;
-    border: 1px solid #cdccec;
+    border: 1px solid #B9E2B1;
     padding-left: 16px;
     padding-right: 16px;
     text-align: left;
@@ -61,11 +61,11 @@
 }
 
 .btn-outline:hover{
-    background-color: #ded7ee;
+    background-color: #DCF1D8;
 }
 
 .btn-outline:active{
-    background-color: #1e78da;
+    background-color: #306F24;
     color: #fff;
 }
 

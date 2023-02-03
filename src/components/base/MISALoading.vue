@@ -35,7 +35,6 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: invert(14%) sepia(96%) saturate(2953%) hue-rotate(200deg) brightness(96%) contrast(101%);
 }
 
 .loading__icon {

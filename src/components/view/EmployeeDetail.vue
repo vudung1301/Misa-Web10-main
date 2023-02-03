@@ -244,7 +244,7 @@
                   "
                   v-bind:class="{ borderRed: this.requiredempIdentityDate }"
                   id="identityDate"
-                  v-model="this.employee.IdentityIssueDate"
+                  v-model="this.employee.IdentityDate"
                   tabindex="10"
                   class="input full-input"
                   type="date"
@@ -529,14 +529,14 @@ export default {
         //Binding ngày sinh
         this.employee.DateOfBirth = this.onConvertDate(data.DateOfBirth);
         //Binding ngày cấp
-        this.employee.IdentityDate = this.onConvertDate(data.IdentityDate);
+        this.employee.IdentityDate = this.onConvertDate(data.IdentityIssueDate);
         //Binding đơn vị
-        this.departmentId = this.employee.DepartmentId;
+        this.departmentId = this.employee.DepartmentID;
         this.departmentName = this.employee.DepartmentName;
-        //Binding chức danh
-       
-        this.positionId = this.employee.PositionId;
-        this.positionName = this.employee.PositionName;
+        //Binding chức danh\
+        this.identityIssuePlace= this.employee.IdentityIssuePlace       
+        this.positionId = this.employee.JobPositionID;
+        this.positionName = this.employee.JobPositionName;
         
         //Binding giới tính
         if (this.employee.Gender == 0) {
@@ -636,7 +636,6 @@ export default {
         ) {
           this.employeeDetails(false);
         }
-
         //Ẩn dialog Warning
         this.isShowWaring = false;
       } catch (error) {
@@ -766,10 +765,10 @@ export default {
       this.validateEmpName();
 
       //Kiểm tra trường ngày sinh
-      // this.validateBirthday(this.employee.DateOfBirth);
+      this.validateBirthday(this.employee.DateOfBirth);
 
       //Kiểm tra trường ngày cấp
-      // this.validateIdentityDate(this.employee.IdentityDate);
+      this.validateIdentityDate(this.employee.IdentityDate);
 
       //Kiểm tra trường đơn vị
       this.validateDepartment();
@@ -817,19 +816,19 @@ export default {
           this.hideBtn = true;
         } else {
           //Build đối tượng
-          this.employee.DepartmentId = this.departmentId;
-          this.employee.PositionId = this.positionId;
-          this.employee.CreatedBy =
-            Math.floor(Math.random() * (999999999 - 0)) + 0;
-
+          this.employee.DepartmentID = this.departmentId;
+          this.employee.JobpositionID = this.positionId;
+          this.employee.CreatedBy ="Nguyen Tre Trau";
+          this.employee.ModifiedBy ="Nguyen Tre Trau";
           //Kiểm tra nếu statusEmp = newEmployee thì thực hiện gọi API thêm mới, ngược lại sẽ gọi API sửa
           if (
             this.statusEmp == "newEmployee" ||
             this.statusEmp == "copyEmployee"
           ) {
+            console.log(this.employee);
             //Gọi api để thêm mới
             this.axios
-              .post("https://amis.manhnv.net/api/v1/Employees", this.employee)
+              .post("http://localhost:5168/api/v1/Employees", this.employee)
               .then(() => {
                 //Kiểm tra xem là Cất hay Cất và thêm
                 if (check == false) {
@@ -865,8 +864,8 @@ export default {
             //Gọi api sửa
             this.axios
               .put(
-                "https://amis.manhnv.net/api/v1/Employees/" +
-                  this.employee.EmployeeId,
+                "http://localhost:5168/api/v1/Employees/" +
+                  this.employee.EmployeeID,
                 this.employee
               )
               .then(() => {
@@ -972,7 +971,7 @@ export default {
     onShowDepartmentName(item) {
       try {
         //Lấy giá trị item được gửi lên và gán vào data
-        this.departmentId = item.DepartmentId;
+        this.departmentId = item.DepartmentID;
         if (!item.DepartmentName) {
           this.departmentName = "";
         } else {
@@ -993,11 +992,11 @@ export default {
     onShowPositionName(item) {
       try {
         //Lấy giá trị item được gửi lên và gán vào data
-        this.positionId = item.PositionId;
-        if (!item.PositionName) {
+        this.positionId = item.JobPositionID;
+        if (!item.JobPositionName) {
           this.positionName = "";
         } else {
-          this.positionName = item.PositionName;
+          this.positionName = item.JobPositionName;
         }
         //Ẩn contextMenuDepartment
         this.isShowPosition = false;
@@ -1049,15 +1048,15 @@ export default {
           this.validateEmpName();
         }
 
-        // //Validate trường ngày sinh
-        // if (ref == "birthday") {
-        //   this.validateBirthday(data);
-        // }
+        //Validate trường ngày sinh
+        if (ref == "birthday") {
+          this.validateBirthday(data);
+        }
 
-        //Validate trường ngày cấp
-        // if (ref == "identityDate") {
-        //   this.validateIdentityDate(data);
-        // }
+       // Validate trường ngày cấp
+        if (ref == "identityDate") {
+          this.validateIdentityDate(data);
+        }
 
         //Validate trường đơn vị
         if (ref == "cbbDepartment") {
@@ -1102,31 +1101,31 @@ export default {
      * @param {Any} ref Truyền vào dữ liệu refs
      * Author: DungNP (17/12/2022)
      */
-    // validateBirthday(data) {
-    //   try {
-    //     if (!data) {
-    //       //Dữ liệu ngày tháng sai
-    //       this.requiredempDateOfBirth = true;
-    //       this.titleBirthday = "Ngày sinh không hợp lệ";
-    //       this.errorMsg.push("Ngày sinh không hợp lệ.");
-    //     } else {
-    //       let date = new Date(data);
-    //       let datenow = new Date();
-    //       if (date < datenow) {
-    //         //Dữ liệu ngày tháng đúng
-    //         this.requiredempDateOfBirth = false;
-    //         this.titleBirthday = "";
-    //       } else {
-    //         //Dữ liệu ngày tháng sai
-    //         this.requiredempDateOfBirth = true;
-    //         this.titleBirthday = "Ngày sinh không thể lớn hơn ngày hiện tại";
-    //         this.errorMsg.push("Ngày sinh không thể lớn hơn ngày hiện tại.");
-    //       }
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // },
+    validateBirthday(data) {
+      try {
+        if (!data) {
+          //Dữ liệu ngày tháng sai
+          this.requiredempDateOfBirth = true;
+          this.titleBirthday = "Ngày sinh không hợp lệ";
+          this.errorMsg.push("Ngày sinh không hợp lệ.");
+        } else {
+          let date = new Date(data);
+          let datenow = new Date();
+          if (date < datenow) {
+            //Dữ liệu ngày tháng đúng
+            this.requiredempDateOfBirth = false;
+            this.titleBirthday = "";
+          } else {
+            //Dữ liệu ngày tháng sai
+            this.requiredempDateOfBirth = true;
+            this.titleBirthday = "Ngày sinh không thể lớn hơn ngày hiện tại";
+            this.errorMsg.push("Ngày sinh không thể lớn hơn ngày hiện tại.");
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
 
     /**
      * Thực hiện kiểm tra ngày cấp xem có hợp lệ không
@@ -1134,31 +1133,31 @@ export default {
      * @param {Any} ref Truyền vào dữ liệu refs
      * Author: DungNP (17/12/2022)
      */
-    // validateIdentityDate(data) {
-    //   try {
-    //     if (!data) {
-    //       //Dữ liệu ngày tháng sai
-    //       this.requiredempIdentityDate = true;
-    //       this.titleIdentityDate = "Ngày cấp không hợp lệ";
-    //       this.errorMsg.push("Ngày cấp không hợp lệ.");
-    //     } else {
-    //       let date = new Date(data);
-    //       let datenow = new Date();
-    //       if (date < datenow) {
-    //         //Dữ liệu ngày tháng đúng
-    //         this.requiredempIdentityDate = false;
-    //         this.titleIdentityDate = "";
-    //       } else {
-    //         //Dữ liệu ngày tháng sai
-    //         this.requiredempIdentityDate = true;
-    //         this.titleIdentityDate = "Ngày cấp không thể lớn hơn ngày hiện tại";
-    //         this.errorMsg.push("Ngày cấp không thể lớn hơn ngày hiện tại.");
-    //       }
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // },
+    validateIdentityDate(data) {
+      try {
+        if (!data) {
+          //Dữ liệu ngày tháng sai
+          this.requiredempIdentityDate = true;
+          this.titleIdentityDate = "Ngày cấp không hợp lệ";
+          this.errorMsg.push("Ngày cấp không hợp lệ.");
+        } else {
+          let date = new Date(data);
+          let datenow = new Date();
+          if (date < datenow) {
+            //Dữ liệu ngày tháng đúng
+            this.requiredempIdentityDate = false;
+            this.titleIdentityDate = "";
+          } else {
+            //Dữ liệu ngày tháng sai
+            this.requiredempIdentityDate = true;
+            this.titleIdentityDate = "Ngày cấp không thể lớn hơn ngày hiện tại";
+            this.errorMsg.push("Ngày cấp không thể lớn hơn ngày hiện tại.");
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
 
     /**
      * Thực hiện validate Đơn vị
@@ -1256,6 +1255,7 @@ export default {
       titleDepartment: "",
       titlePosition: "",
       titlePhoneNumber: "",
+      identityIssuePlace:"",
       borderRed: false,
       requiredEmployeeCode: false,
       requiredEmployeeName: false,
